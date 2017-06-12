@@ -1,0 +1,20 @@
+CREATE CONSTRAINT ON (n:topic) ASSERT n.name IS UNIQUE;
+
+create (n:topic {name:"reactjs"})
+return n
+
+
+match (n:topic {name:"reactjs"})
+merge (n)<-[rel:subTopicOf]-(s1:subtopic {name:"props"})
+merge (n)<-[rel1:subTopicOf]-(s2:subtopic {name:"rendering"})
+merge (n)<-[rel2:subTopicOf]-(s3:subtopic {name:"state"})
+merge (n)<-[rel3:subTopicOf]-(s4:subtopic {name:"jsx"})
+merge (n)<-[rel4:subTopicOf]-(s5:subtopic {name:"components"})
+merge (n)<-[rel5:subTopicOf]-(s6:subtopic {name:"lifecycle"})
+merge (s1)<-[r1:contributorOf]-(c1:contributor {name:"subash"})
+merge (s2)<-[r2:contributorOf]-(c2:contributor {name:"srini"})
+merge (s3)<-[r3:contributorOf]-(c3:contributor {name:"ruban"})
+merge (s4)<-[r4:contributorOf]-(c4:contributor {name:"yogee"})
+merge (s5)<-[r5:contributorOf]-(c5:contributor {name:"gowtham"})
+merge (s6)<-[r6:contributorOf]-(c6:contributor {name:"santhosh"})
+return n

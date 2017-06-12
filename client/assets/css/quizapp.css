@@ -1,0 +1,21 @@
+.logo {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.overflow-scrolling {
+    overflow-y: scroll;
+}
+.stop-scroll{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.listItem:hover{
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.list
+{
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
